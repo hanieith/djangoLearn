@@ -24,4 +24,5 @@ urlpatterns = [
     re_path(r'^about', views.about),
     path('products/<int:productid>/', views.products),
     path('users/', views.users),
+    path('details/', views.details),
 ]

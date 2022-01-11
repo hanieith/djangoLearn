@@ -1,14 +1,20 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect
 
 def index(request):
-    return HttpResponse("<h2>Глaвнaя</h2>")
+    # return render(request, 'firstapp\home.html')
+    data ={'header': 'Передача параметров в шаблон джанго',
+            'message': 'загружен шаблон templates/firstapp/index_app1.html'}
+    return render(request, 'firstapp/index_app1.html', context=data)
 
 def about(request):
     return HttpResponse("<h2>0 сайте</h2>")
 
 def contact(request):
-    return HttpResponse("<h2>Koнтaкты</h2>")
+    return HttpResponseRedirect('/about')
+
+def details(request):
+    return HttpResponsePermanentRedirect('/')
 
 def products(request, productid=1):
     category = request.GET.get("cat", "")
