@@ -20,11 +20,8 @@ from firstapp import views
 
 urlpatterns = [
     path('', views.index, name='home'),
-    re_path(r'^about/contact/', views.contact),
+    re_path(r'^about/contact', views.contact),
     re_path(r'^about', views.about),
-    path('products/', views.products),
     path('products/<int:productid>/', views.products),
     path('users/', views.users),
-    path('users/<int:id>/<name>/', views.users),
-    path('admin/', admin.site.urls),
 ]
