@@ -2,10 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect
 
 def index(request):
-    # return render(request, 'firstapp\home.html')
-    data ={'header': 'Передача параметров в шаблон джанго',
-            'message': 'загружен шаблон templates/firstapp/index_app1.html'}
-    return render(request, 'firstapp/index_app1.html', context=data)
+    return render(request, "firstapp/home.html")
 
 def about(request):
     return HttpResponse("<h2>0 сайте</h2>")
