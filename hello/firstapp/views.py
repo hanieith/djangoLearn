@@ -4,15 +4,6 @@ from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanen
 def index(request):
     return render(request, "firstapp/home.html")
 
-def about(request):
-    return HttpResponse("<h2>0 сайте</h2>")
-
-def contact(request):
-    return HttpResponseRedirect('/about')
-
-def details(request):
-    return HttpResponsePermanentRedirect('/')
-
 def products(request, productid=1):
     category = request.GET.get("cat", "")
     output = f"<h2>Продукт № {productid} Категория: {category}</h2>"
