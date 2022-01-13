@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect
 
 def index(request):
-    return render(request, "firstapp/home.html")
+    return render(request, "firstapp/index.html")
 
 def products(request, productid=1):
     category = request.GET.get("cat", "")
