@@ -20,9 +20,5 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('', views.index, name='home'),
-    path('contact/', TemplateView.as_view(template_name="firstapp/about.html")),
-    path('about/', TemplateView.as_view(template_name="firstapp/contact.html", extra_context={"work":
-                                                                                              "Разработка говна"})),
-    path('products/<int:productid>/', views.products),
-    path('users/', views.users),
+    path('about/', views.about, name='about'),
 ]
