@@ -1,5 +1,12 @@
 {% extends 'firstapp/base.html' %}
 
 {% block body %}
-<p>HII</p>
+<form method="POST">
+    {% csrf_token %}
+    <table>
+        {{ form }}
+    </table>
+    <input type="submit" value="отправить">
+</form>
+
 {% endblock  %}
