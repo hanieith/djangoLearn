@@ -1,12 +1,16 @@
 {% extends 'firstapp/base.html' %}
 
 {% block body %}
-<form method="POST">
+<form method="POST" novalidate>
     {% csrf_token %}
-    <table>
-        {{ form }}
-    </table>
-    <input type="submit" value="отправить">
+    <div class="form-group">
+        {% for field in form %}
+        <div {{ field.label_tag }}</div>
+        <div>{{ field }}</div>
+        <div class="error"> {{ field.errors }}</div>
+        {% endfor %}
+    </div>
+    <input type="submit" value="Отослать нахуй">
 </form>
 
 {% endblock  %}
