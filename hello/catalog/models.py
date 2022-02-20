@@ -68,7 +68,7 @@ class Book(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('books', args=[self.id])
+        return reverse('books-detail', args=[self.id])
 
     def display_author(self):
         return ' и '.join([author.last_name for author in self.author.all()])
