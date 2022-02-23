@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     {% block head %}
     <img src="{% static 'images/logotip.jpg' %}" style="width:100px; geight:100px;" align="absmiddle">
-    <font size=7, color="blue">Сайт "Мир книг"</font>
+    <font size=7, color="Black">Сайт "Мир книг"</font>
     {% endblock %}
 </head>
 <body>
@@ -22,7 +22,7 @@
             <ul class="sidebar-nav">
                 <li><a href="{% url 'index' %}">Главная страница</a></li>
                 <li><a href="{% url 'books' %}">Все книги</a></li>
-                <li><a href="">Все авторы</a></li>
+                <li><a href="{% url 'authors' %}">Все авторы</a></li>
             </ul>
             {% endblock %}
         </div>
@@ -45,9 +45,7 @@
     {% endif %}
 {% endblock %}
             {% block footer %}
-                {% block copyright %}
-            <p>Copyright ООО "Люди и книги", 2022. Все права защищены</p>
-                {% endblock %}
+        <p class="text-center">Copyright ООО "Книги", 2022. Все права защищены</p>
             {% endblock %}
         </div>
     </div>
