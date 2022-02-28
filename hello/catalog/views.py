@@ -4,6 +4,8 @@ from .models import Book, Author, BookInstance
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import AuthorsForm
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 
 
 def index(request):
@@ -81,3 +83,17 @@ def edit(request, id):
     else:
         return render(request, "edit.html", {"author":author})
 
+class BookCreate(CreateView):
+    model = Book
+    fields ='__all__'
+    succes_url = reverse_lazy('book')
+
+class BookUpdate(UpdateView):
+    model = Book
+    fields = '__all__'
+    succes_url = reverse_lazy('book')
+
+class BookDelete(DeleteView):
+    model = Book
+    def get_success_url(self):
+        return reverse_lazy('books')
